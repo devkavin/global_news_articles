@@ -2,6 +2,3 @@
 
 // ignore this line in git
 const String myApiKey = 'Your Api Key';
-
-
-// Path: lib\services\db_service.dart
