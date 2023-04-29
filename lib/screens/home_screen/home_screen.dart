@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:global_news_articles/screens/bookmarks_screen/bookmarks_screen.dart';
+import '../../services/api_key.dart';
 import '../../widgets/article_list_item.dart';
 import '../article_details_screen/article_details_screen.dart';
 import '../category_screen/category_screen.dart';
@@ -39,6 +40,25 @@ class _HomeScreenState extends State<HomeScreen> {
       });
     } catch (e) {
       debugPrint('Error fetching articles: $e');
+      if (myApiKey == 'Your Api Key') {
+        // show a dialog to the user
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: const Text('API Key missing'),
+            content: const Text(
+                'Please add your API key from newsapi.org to lib/services/api_key.dart'),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Text('OK'),
+              ),
+            ],
+          ),
+        );
+      }
     }
   }
 
