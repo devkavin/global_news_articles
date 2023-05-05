@@ -71,9 +71,9 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(
               height: 100,
               child: DrawerHeader(
-                // title should be in center
+                // title should be in cereer
                 decoration: BoxDecoration(
-                  // get color from theme
+                  // get color fromtheme
                   color: Theme.of(context).primaryColor,
                 ),
                 child: const Padding(
@@ -91,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             ListTile(
-              title: const Text('General'),
+              title: const Text('General News'),
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => const CategoryScreen(
